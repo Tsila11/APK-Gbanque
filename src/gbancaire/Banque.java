@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package gbancaire;
+/*package gbancaire;
 import java.util.HashMap;// HashMap est une classe concrete qui implemente l'interface Map
 import java.util.Map;//Map c'est l'interface en java qui represente une collection d'objets
 public class Banque {
@@ -35,3 +35,4 @@ public void listerComptes()
    
    }
 }
+*/

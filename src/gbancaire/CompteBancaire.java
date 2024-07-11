@@ -4,17 +4,22 @@
  */
 package gbancaire;
 
+import java.sql.Connection;
+import java.sql.Statement;
+import java.sql.*;
+import java.sql.DriverManager;
+
 public class CompteBancaire {
-    private String numeroCompte;
+    private int numeroCompte;
     private String titulaireCompte;
-    private double solde;
-    public CompteBancaire(String nCompte,String tcmpte,double soldeDeVotreCompte)
+    private int solde;
+    public CompteBancaire(int nCompte,String tcmpte,int soldeDeVotreCompte)
     {
         this.titulaireCompte=tcmpte;
         this.numeroCompte=nCompte;
         this.solde=soldeDeVotreCompte;
     }
-    public String getNumeroCompte()
+    public int getNumeroCompte()
     {
         return numeroCompte;
     }
@@ -22,7 +27,7 @@ public class CompteBancaire {
     {
         return titulaireCompte;
     }
-     public double getSolde()
+     public int getSolde()
     {
         return solde;
     }
@@ -47,6 +52,22 @@ public class CompteBancaire {
             System.out.println("Votre solde est insuffisant");
         }else
             System.out.println("Le montant de retrait > 0");
+    }
+    public  static void sauverDansBase(CompteBancaire b)
+    {
+        Connection c=null;
+        Statement st=null;
+        try
+        {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            c= DriverManager.getConnection("jdbc:mysql://localhost:3306/gestion_banquaire", "root", "");
+            st=c.createStatement();
+            String sqlInsert="insert into banque values("+b.getNumeroCompte()+",'"+b.gettitulaire()+"',"+b.getSolde()+")";
+            st.executeUpdate(sqlInsert);
+        }catch(Exception e)
+        {
+            e.printStackTrace();
+        }
     }
     @Override
     public String toString()

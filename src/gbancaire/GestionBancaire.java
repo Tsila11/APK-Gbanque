@@ -2,13 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package gbancaire;
+/*package gbancaire;
 
 
 import java.util.Scanner;
-public class GestionBancaire {
+public class GestionBancaire  extends javax.swing.JFrame{
   
     public static void main(String[] args) {
+           java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new ApkBancaire().setVisible(true);
+            }
+        });
           Scanner scanner=new Scanner(System.in);
     Banque banque=new Banque();
     boolean quitter=false;
@@ -98,3 +103,4 @@ public class GestionBancaire {
 }
     
 
+*/
